@@ -1,0 +1,144 @@
+/* ---------- Tokens ---------- */
+:root {
+  --cream: #f6efe4;
+  --paper: #fffaf2;
+  --ink: #2c2118;
+  --rust: #a3502c;
+  --olive: #5c6644;
+  --rule: #d8c9b3;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+
+  --page: 40rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--rust);
+  outline-offset: 3px;
+}
+
+header, main, footer {
+  max-width: var(--page);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* ---------- Header ---------- */
+header {
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 2.5rem;
+}
+
+.kicker {
+  font-size: 0.85rem;
+  color: var(--olive);
+  margin: 0 0 1.25rem;
+}
+
+header h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+  font-size: clamp(2.75rem, 9vw, 4rem);
+  margin: 0;
+  color: var(--rust);
+}
+
+.tag {
+  margin: 0.75rem 0 0;
+  color: var(--ink);
+  opacity: 0.75;
+}
+
+/* ---------- Courses ---------- */
+.course {
+  padding-block: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.course h2 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--olive);
+  margin: 0 0 1.5rem;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-list li {
+  margin-bottom: 1.4rem;
+}
+
+.menu-list li:last-child {
+  margin-bottom: 0;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.row h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* dotted leader between name and price */
+.row::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px dotted var(--rule);
+  transform: translateY(-0.3em);
+}
+
+.price {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--rust);
+}
+
+.menu-list p {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  color: var(--ink);
+  opacity: 0.7;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  padding-block: 2.5rem 3.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--ink);
+  opacity: 0.6;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 30rem) {
+  .row h3 { font-size: 1.05rem; }
+}
