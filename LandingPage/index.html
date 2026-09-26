@@ -1,29 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+     <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="site-header">
-       <a class="logo" href="#top">Priyanshu Kumar</a>
-       <nav>
-        <a href="#">About</a>
-        <a href="#">Projects</a>
-        <a href="#">Skills</a>
-        <a href="#">Contact</a>
-       </nav>
+        <a class="logo" href="#top">Priyanshu Kumar</a>
+        <nav>
+            <a href="#">About</a>
+            <a href="#">Projects</a>
+            <a href="#">Skills</a>
+            <a href="#">Contact</a>
+        </nav>
     </header>
 
     <main id="top">
 
         <section class="hero">
             <h1>I build small, clear things for the web.</h1>
-            <p class="lead">Hi, I'm learning front-end development in public and pushing something to GitHub every day.</p>
+            <p class="lead">Hi, I'm learning front-end development in public and pushing something to GitHub every day.
+            </p>
             <a href="#projects" class="button"></a>
         </section>
+
+        <section class="about">
+            <h2>About</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio nulla quo dicta, officia tenetur
+                molestias illum voluptatem sed. Ipsa minima nulla voluptate ullam itaque.</p>
+        </section>
+
+        <section class="projects">
+            <h2>Projects</h2>
+            <p class="note">Lorem ipsum dolor sit amet.</p>
+
+            <ol class="log">
+                <li>
+                    <time datetime="2026-09-25">25 Sep 2026</time>
+                    <div>
+                        <h3><a href="#">Portfolio page </a></h3>
+                        <p>This site. Plain HTML and CSS, no farmeworks.</p>
+                    </div>
+                </li>
+                <li>
+                    <time datetime="2026-09-24">24 Sep 2026</time>
+                    <div>
+                        <h3>
+                            <a href="#">Project name</a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, provident!</p>
+
+                    </div>
+                </li>
+
+            </ol>
+        </section>
+
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul class="skills">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Git and GITHUB</li>
+                <li>Responsive layout</li>
+            </ul>
+        </section>
+
+        <section class="contavt">
+            <h2>Contact</h2>
+            <p>Want to talk about a project or an opportunity? Email me at <a href="mailto:you@example.com">you@example.com</a> or find me on <a href="https://github.com/">GitHub</a>.</p>
+        </section>
+
     </main>
-    
+
+    <footer>
+        <p>Built by hand with HTML and CSS.</p>
+    </footer>
+
 </body>
+
 </html>

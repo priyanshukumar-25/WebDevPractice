@@ -1,0 +1,216 @@
+:root {
+  --paper: #f3f6fb;
+  --ink: #12233f;
+  --muted: #55647d;
+  --blue: #2455d6;
+  --highlight: #f2d15c;
+  --line: #c9d3e4;
+ 
+  --font-head: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Newsreader", Georgia, "Times New Roman", serif;
+ 
+  --page: 44rem;
+}
+ 
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+ 
+html { scroll-behavior: smooth; }
+ 
+body {
+  margin: 0;
+  color: var(--ink);
+  background-color: var(--paper);
+  /* graph-paper grid */
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-attachment: fixed;
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  line-height: 1.65;
+}
+ 
+a { color: var(--blue); text-underline-offset: 3px; }
+a:hover { color: var(--ink); }
+ 
+:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+ 
+h1, h2, h3 {
+  font-family: var(--font-head);
+  line-height: 1.1;
+  margin: 0;
+}
+ 
+/* ---------- Layout ---------- */
+.site-header,
+main,
+footer {
+  max-width: var(--page);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+ 
+main section {
+  padding-block: 3rem;
+}
+ 
+/* ---------- Header ---------- */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem 2rem;
+  padding-block: 1.5rem;
+}
+ 
+.logo {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+ 
+.site-header nav { display: flex; gap: 1.25rem; }
+ 
+.site-header nav a {
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+ 
+.site-header nav a:hover { text-decoration: underline; }
+ 
+/* ---------- Hero ---------- */
+.hero { padding-top: 4rem; }
+ 
+.hero h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  /* highlighter behind the whole headline */
+  background: linear-gradient(transparent 62%, var(--highlight) 62%);
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+ 
+.lead {
+  margin: 2rem 0;
+  max-width: 34rem;
+  font-size: 1.35rem;
+  color: var(--muted);
+}
+ 
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.4rem;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--paper);
+  background: var(--ink);
+  text-decoration: none;
+  border-radius: 4px;
+}
+ 
+.button:hover { background: var(--blue); color: var(--paper); }
+ 
+/* ---------- Sections ---------- */
+h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+ 
+section p { max-width: 36rem; margin: 0 0 1rem; }
+ 
+.note { color: var(--muted); font-style: italic; }
+ 
+/* ---------- Projects as a commit log ---------- */
+.log {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  border-left: 2px solid var(--ink);
+}
+ 
+.log li {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 1rem;
+  padding: 0 0 2rem 1.5rem;
+  position: relative;
+}
+ 
+/* dot on the line */
+.log li::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 0.55rem;
+  width: 12px;
+  height: 12px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+}
+ 
+.log time {
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  color: var(--muted);
+  padding-top: 0.3rem;
+}
+ 
+.log h3 { font-size: 1.3rem; font-weight: 700; }
+.log p { margin: 0.25rem 0 0; }
+ 
+/* ---------- Skills ---------- */
+.skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+ 
+.skills li {
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.35rem 0.9rem;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+}
+ 
+/* ---------- Footer ---------- */
+footer {
+  padding-block: 2rem 3rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+ 
+/* ---------- Small screens ---------- */
+@media (max-width: 34rem) {
+  body { font-size: 1.1rem; }
+ 
+  .log li {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
