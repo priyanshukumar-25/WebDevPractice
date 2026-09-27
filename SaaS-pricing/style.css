@@ -1,0 +1,250 @@
+/* ---------- Tokens ---------- */
+:root {
+  --bg: #0f1115;
+  --panel: #181b22;
+  --panel-featured: #1c2b4a;
+  --ink: #eef0f4;
+  --muted: #9aa2b1;
+  --line: #2a2e38;
+  --accent: #6ee7b7;
+  --accent-ink: #0f1115;
+
+  --font-head: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --page: 64rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.wrap, main, footer {
+  max-width: var(--page);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* ---------- Header ---------- */
+header {
+  border-bottom: 1px solid var(--line);
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.25rem;
+}
+
+.brand {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+nav { display: flex; gap: 1.5rem; }
+
+nav a {
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+nav a:hover { color: var(--ink); }
+
+/* ---------- Intro ---------- */
+.intro {
+  text-align: center;
+  padding-block: 4.5rem 3rem;
+}
+
+.intro h1 {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.intro p {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+/* ---------- Plans ---------- */
+.plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding-bottom: 4rem;
+}
+
+.plan {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.plan-featured {
+  background: var(--panel-featured);
+  border-color: #3a4d7a;
+}
+
+.badge {
+  position: absolute;
+  top: -0.75rem;
+  left: 1.75rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  margin: 0;
+}
+
+.plan h2 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin: 0 0 0.5rem;
+}
+
+.amount {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 2.25rem;
+}
+
+.period { color: var(--muted); font-size: 0.95rem; }
+
+.desc {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0 0 1.5rem;
+}
+
+.features {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  flex: 1;
+}
+
+.features li {
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+.features li:first-child { border-top: none; }
+
+.btn {
+  display: block;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.btn-solid {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn-solid:hover { opacity: 0.9; }
+
+.btn-outline {
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- FAQ ---------- */
+.faq {
+  padding-bottom: 4rem;
+  max-width: 40rem;
+}
+
+.faq h2 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0 0 1.25rem;
+}
+
+.faq details {
+  border-top: 1px solid var(--line);
+  padding: 1rem 0;
+}
+
+.faq details:last-of-type {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq summary {
+  cursor: pointer;
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 1.05rem;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+
+.faq summary::after {
+  content: "+";
+  float: right;
+  color: var(--accent);
+}
+
+.faq details[open] summary::after { content: "–"; }
+
+.faq details p {
+  color: var(--muted);
+  margin: 0.75rem 0 0;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  border-top: 1px solid var(--line);
+  padding-block: 2rem 3rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 48rem) {
+  .plans { grid-template-columns: 1fr; }
+}
